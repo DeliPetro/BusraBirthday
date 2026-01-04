@@ -43,7 +43,7 @@ const screens = [
   {
     id: "s5",
     title: "Küçük bir puzzle 🧩",
-    text: "Mini bir görev: Ekranın altındaki butona basınca ‘sevgi puanı’ artacak 😄 Hazır mısın?",
+    text: "Mini bir görev: Ekranın altındaki butona basınca ‘sevgi puanı’ artacak. Hazır mısın?",
     image: "assets/6.jpeg",
     next: "s6",
     bonus: true
