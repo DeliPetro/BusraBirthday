@@ -36,7 +36,7 @@ const screens = [
   {
     id: "s4b",
     title: "Anlaşılmak 🤍",
-    text: "En güzel hislerden biri: Beni anlayan, dinleyen ve destekleyen bir sen olması.",
+    text: "En güzel hislerden biri: Birbirimizi anlayan, dinleyen ve destekleyen biz olmamız.",
     image: "assets/5.jpeg",
     next: "s5"
   },
@@ -147,21 +147,31 @@ function render(){
   }
 
   // Bonus: s5'te puan artırma
-  if(screen.bonus){
-    elNext.textContent = `Sevgi puanı +1 💛 (Şu an: ${lovePoints})`;
-  }
+ if(screen.bonus){
+  const remaining = 3 - lovePoints;
+  elNext.textContent = remaining > 0
+    ? `Sevgi puanı +1 💛 (${lovePoints}/3) — ${remaining} kaldı`
+    : `Tamamlandı! 💛`;
+}
 }
 
 elNext.addEventListener("click", () => {
   const screen = getScreen(currentId);
-  if(!screen) return;
+if(screen.bonus){
+  lovePoints += 1;
 
-  if(screen.bonus){
-    lovePoints += 1;
-    // aynı ekranda kal, buton text'i güncellensin
+  // 3 puana ulaşınca otomatik ilerle
+  if (lovePoints >= 3) {
+    currentId = screen.next;   // s6'ya geçer
     render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
+
+  // aynı ekranda kal, buton text'i güncellensin
+  render();
+  return;
+}
 
   if(screen.next){
     currentId = screen.next;
