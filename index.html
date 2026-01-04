@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Büşra'ya Mini Hikâye</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="topbar">
+      <div class="badge">💛 Büşra</div>
+      <div class="progress">
+        <div class="bar" id="bar"></div>
+      </div>
+      <div class="step" id="stepText">1 / 7</div>
+    </header>
+
+    <section class="card">
+      <div class="media" id="media">
+        <div class="placeholder" id="placeholder">
+          <div class="ph-emoji">📸</div>
+          <div class="ph-text">Fotoğrafı sonra ekleyebiliriz</div>
+        </div>
+        <img id="img" alt="" />
+      </div>
+
+      <div class="content">
+        <h1 class="title" id="title">Yükleniyor…</h1>
+        <p class="text" id="text"></p>
+
+        <div class="choices" id="choices"></div>
+
+        <button class="primary" id="nextBtn">Devam →</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="hint">📱 Telefonda da çok güzel durur.</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
